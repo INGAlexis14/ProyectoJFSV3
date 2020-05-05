@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cuenta Empleado</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form >
+            <font style="color:rgb(255,0,0);">
+               
+            <h1 align="center">Empleado</h1>
+            <hr></hr> 
+            </font>
+           
+            <br></br>
+            <br></br>
+            <div align="center">
+            <h:outputText value="Cedula Empleado :"/>
+            <h:inputText value="#{cuenta.cedula}" required="true" requiredMessage="Debe insertar su Nombre"/> 
+            <br></br><br></br><br></br>      
+            <h:outputText value="Nombre Empleado :"/>
+            <h:inputText value="#{cuenta.nombre}" required="true" requiredMessage="Debe insertar su Nombre"/> 
+            <br></br><br></br><br></br>          
+            <h:outputText value="Apellido Empleado :"/>
+            <h:inputText value="#{cuenta.apellido}" required="true" requiredMessage="Debe insertar su Apellido"/> 
+            <br></br><br></br>
+            <h:outputText value="Fecha Nacimiento :"/>
+            <h:inputText value="#{cuenta.fechaNacimiento}" required="true" requiredMessage="Debe insertar su Apellido"/> 
+            <br></br><br></br>
+            <font style="color:rgb(24,127,194);">
+            <h:outputText value="Profesion  :  " />
+            </font>
+            <br></br>
+            <br></br>
+            <h:selectOneMenu value = "#{cuenta.profesion}"> 
+                <f:selectItem itemValue = "1" itemLabel = "Primaria" /> 
+                <f:selectItem itemValue = "2" itemLabel = "Secundaria" /> 
+                <f:selectItem itemValue = "3" itemLabel = "Tecnico" /> 
+                <f:selectItem itemValue = "4" itemLabel = "Tecnologo" />
+                <f:selectItem itemValue = "5" itemLabel = "Profesional" /> 
+                <f:selectItem itemValue = "6" itemLabel = "Maestria" /> 
+            </h:selectOneMenu> 
+            <br></br><br></br>
+            <font style="color:rgb(24,127,194);">
+            <h:outputText value="Idioma  :  " />
+            </font>
+            <h:selectManyCheckbox value="#{cuenta.idioma}" >
+                <f:selectItem itemValue="Ingles" itemLabel="Ingles" />
+                <f:selectItem itemValue="Frances" itemLabel="Frances" />
+                <f:selectItem itemValue="Aleman" itemLabel="Aleman" />
+            </h:selectManyCheckbox>
+            
+            
+            <br></br><br></br><br></br>
+            <h:commandButton value="GENERAR" action="#{cuenta.generar()}" />
+            </div>
+            
+        </h:form>    
+    </h:body>
+</html>

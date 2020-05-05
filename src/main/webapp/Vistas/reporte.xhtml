@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Reporte Empleado</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>     
+            <font style="color:rgb(255,0,0);">             
+            <h1 align="center">Reporte</h1>
+            <hr></hr> 
+            </font>
+             <div align="center">
+                 
+               
+                #{cuenta.nombre}-- #{cuenta.apellido}-- #{cuenta.fechaNacimiento} 
+                <br></br>
+                
+                <font style="color:rgb(24,127,194);"> 
+                <h:outputLabel> profesion : </h:outputLabel>
+                </font>
+                #{reporte.pintarProfesion()}        
+                <br></br>
+                
+                <font style="color:rgb(24,127,194);"> 
+                <h:outputLabel>Lenguas que habla: </h:outputLabel>
+                </font>
+                <ul>
+                    <ui:repeat var="idiomas" value="#{cuenta.idioma}">
+                        #{idiomas} 
+                    </ui:repeat>             
+                </ul>
+                <br></br>
+                
+                
+                
+                <font style="color:rgb(24,127,194);"> 
+                <h:outputLabel>Los dias trabajados son 20: </h:outputLabel>
+                </font>
+                <br></br>
+                <br></br>
+                <hr></hr> 
+                <br></br>
+                <font style="color:rgb(245, 26, 9 );"> 
+                <h:outputLabel>Cobro por Profesion : </h:outputLabel>
+                </font>
+                #{reporte.pintarCobroProfesion()} pesos
+                <br></br>
+                
+                <font style="color:rgb(245, 26, 9 );"> 
+                <h:outputLabel>Cobro por idioma : </h:outputLabel>
+                </font>
+                #{reporte.pintarCobroIdioma()} pesos
+                <br></br>
+                
+                
+                <font style="color:rgb(245, 26, 9 );"> 
+                    <h3>
+                <h:outputLabel>Su liquidacion total es : </h:outputLabel>
+                </h3>    
+                </font>
+                #{reporte.pintarCobroFinal()} pesos
+                
+             </div>
+        </h:form>
+    </h:body>
+</html>
+
